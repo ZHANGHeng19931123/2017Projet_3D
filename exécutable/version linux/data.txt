@@ -1,0 +1,2 @@
+[General]
+text=ZHANG\n1000\nHeng\n100\nHU\n17.9339\nkev\n0\n456\n0\naaa\n0\nazds\n0\nguo\n0\nYutong\n0

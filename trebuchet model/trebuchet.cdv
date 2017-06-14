@@ -1,0 +1,200 @@
+begin header
+axis custom X 0 10 10 Y 0 10 10 Z 0 10 10
+axisscalefactor .7
+axiscolor x .3 .3 .3
+axiscolor y .3 .3 .3
+axiscolor z .3 .3 .3
+end header
+
+begin displaylist
+
+newlist standpart1
+
+pushmatrix
+color3f .6 .3 .4
+translatef -2 -2 3.3
+rotatef 30 0 1 0
+scalef 0.5 0.5 8
+volume box
+popmatrix
+
+pushmatrix
+color3f .6 .3 .4
+translatef 2 -2 3.3
+rotatef 150 0 1 0
+scalef 0.5 0.5 8
+volume box
+popmatrix
+
+pushmatrix
+color3f .6 .3 .4
+translatef -2 2 3.3
+rotatef 30 0 1 0
+scalef 0.5 0.5 8
+volume box
+popmatrix
+
+pushmatrix
+color3f .6 .3 .4
+translatef 2 2 3.3
+rotatef 150 0 1 0
+scalef 0.5 0.5 8
+volume box
+popmatrix
+
+endlist
+
+newlist standpart2
+
+color3f 1 1 1
+
+enable texture2d
+disable backfacecull
+bind "logo.png"
+begin quads
+texture 0 1
+vertex -4 -2 0.3
+texture 1 1
+vertex 4 -2 0.3
+texture 1 0
+vertex 4 2 0.3
+texture 0 0
+vertex -4 2 0.3
+end quads
+disable texture2d
+
+pushmatrix
+color3f .4 .3 .6
+translatef 0 0 0
+scalef 8 4 .5
+volume box
+popmatrix
+
+endlist
+
+newlist standpart3
+
+pushmatrix
+color3f .2 .3 .9
+translatef 0 0 6.5
+scalef 0.2 4 0.2
+volume cylinder 20 true true
+popmatrix
+
+endlist
+
+newlist stand
+
+pushmatrix
+calllist standpart3
+calllist standpart2
+calllist standpart1
+popmatrix
+
+endlist
+
+newlist swingArm
+
+pushmatrix
+color3f .2 .3 .9
+translatef 3 0 0
+scalef 12 0.5 0.5
+volume box
+popmatrix
+
+pushmatrix
+color3f .2 .3 .9
+scalef 1 1 1
+translatef -3 0 0
+volume box
+popmatrix
+
+endlist
+
+newlist string
+pushmatrix
+color3f .7 .2 .6
+translatef 12 4 7.5
+scalef 0.05 0.05 2.5
+volume cylinder 20 true true
+popmatrix
+
+endlist
+
+newlist string2
+pushmatrix
+color3f .7 .2 .6
+translatef 11.7 4 5
+rotatef 15 0 1 0
+scalef 0.05 0.05 2.5
+volume cylinder 20 true true
+popmatrix
+
+endlist
+
+newlist string3
+pushmatrix
+color3f .7 .2 .6
+translatef 10.5 4 2.85
+rotatef 45 0 1 0
+scalef 0.05 0.05 2.5
+volume cylinder 20 true true
+popmatrix
+
+endlist
+
+newlist string4
+pushmatrix
+color3f .7 .2 .6
+translatef 9 4 2
+rotatef 90 0 1 0
+scalef 0.05 0.05 2
+volume cylinder 20 true true
+popmatrix
+
+endlist
+
+newlist string
+
+calllist string1
+calllist string2
+calllist string3
+calllist string4
+
+endlist
+
+
+newlist stone
+pushmatrix
+color3f .7 .2 .6
+translatef 10.5 4 1.5
+scalef 1 1 1
+volume sphere 3
+popmatrix
+
+endlist
+
+end displaylist
+
+define stringArmAngle 170
+define standAngle 10
+define standX 2
+define standY 2
+define standZ 2
+
+translatef standX standY standZ
+rotatef standAngle 0 0 1
+calllist stone
+calllist stand
+calllist string
+translatef 0 0 6.5
+rotatef stringArmAngle 0 1 0
+calllist swingArm
+
+
+pushmatrix
+begin script
+popmatrix
+
+
+end script

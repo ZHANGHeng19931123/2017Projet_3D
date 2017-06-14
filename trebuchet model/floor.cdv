@@ -1,0 +1,304 @@
+begin header
+axis custom X 0 10 10 Y 0 10 10 Z 0 10 10
+axisscalefactor .7
+axiscolor x .3 .3 .3
+axiscolor y .3 .3 .3
+axiscolor z .3 .3 .3
+end header
+
+disable backfacecull
+
+define width 40
+define widthdiv2 20
+define length 80
+define lengthdiv2 40
+define height 20
+define trePosWidth -20
+define trePosLength -70
+define targetHeight 10
+define targetHeightDiv2 5
+define targetPosWidth 0
+define targetPosLength -10
+
+begin displaylist
+
+newlist grass
+translatef trePosLength trePosWidth 0
+#down
+begin quads
+color3f 0 1 0
+vertex3f 0 0 0
+vertex3f 0 width 0
+vertex3f length width 0
+vertex3f length 0 0
+end quads
+#up
+begin quads
+color3f 0 0 1
+vertex3f 0 0 height
+vertex3f 0 width height
+vertex3f length width height
+vertex3f length 0 height
+end quads
+#left
+begin quads
+color3f 1 0 0
+vertex3f 0 0 0
+vertex3f 0 0 height
+vertex3f length 0 height
+vertex3f length 0 0
+end quads
+
+pushmatrix
+color3f 0.5 0.5 0.7
+translatef lengthdiv2 0 3
+scalef length 1 1
+volume box
+popmatrix
+
+pushmatrix
+color3f 0.5 0.5 0.7
+translatef lengthdiv2 0 6
+scalef length 1 1
+volume box
+popmatrix
+
+pushmatrix
+color3f 0.5 0.5 0.7
+translatef 0 0 4
+scalef 1 1 8
+volume box
+popmatrix
+
+pushmatrix
+color3f 0.5 0.5 0.7
+translatef 10 0 4
+scalef 1 1 8
+volume box
+popmatrix
+pushmatrix
+color3f 0.5 0.5 0.7
+translatef 20 0 4
+scalef 1 1 8
+volume box
+popmatrix
+pushmatrix
+color3f 0.5 0.5 0.7
+translatef 30 0 4
+scalef 1 1 8
+volume box
+popmatrix
+pushmatrix
+color3f 0.5 0.5 0.7
+translatef 40 0 4
+scalef 1 1 8
+volume box
+popmatrix
+pushmatrix
+color3f 0.5 0.5 0.7
+translatef 50 0 4
+scalef 1 1 8
+volume box
+popmatrix
+pushmatrix
+color3f 0.5 0.5 0.7
+translatef 60 0 4
+scalef 1 1 8
+volume box
+popmatrix
+pushmatrix
+color3f 0.5 0.5 0.7
+translatef 70 0 4
+scalef 1 1 8
+volume box
+popmatrix
+pushmatrix
+color3f 0.5 0.5 0.7
+translatef 80 0 4
+scalef 1 1 8
+volume box
+popmatrix
+
+#right
+begin quads
+color3f 1 0 0
+vertex3f 0 width 0
+vertex3f 0 width height
+vertex3f length width height
+vertex3f length width 0
+end quads
+
+pushmatrix
+color3f 0.5 0.5 0.7
+translatef lengthdiv2 width 3
+scalef length 1 1
+volume box
+popmatrix
+
+pushmatrix
+color3f 0.5 0.5 0.7
+translatef lengthdiv2 width 6
+scalef length 1 1
+volume box
+popmatrix
+pushmatrix
+color3f 0.5 0.5 0.7
+translatef 0 width 4
+scalef 1 1 8
+volume box
+popmatrix
+pushmatrix
+color3f 0.5 0.5 0.7
+translatef 10 width 4
+scalef 1 1 8
+volume box
+popmatrix
+pushmatrix
+color3f 0.5 0.5 0.7
+translatef 20 width 4
+scalef 1 1 8
+volume box
+popmatrix
+pushmatrix
+color3f 0.5 0.5 0.7
+translatef 30 width 4
+scalef 1 1 8
+volume box
+popmatrix
+pushmatrix
+color3f 0.5 0.5 0.7
+translatef 40 width 4
+scalef 1 1 8
+volume box
+popmatrix
+pushmatrix
+color3f 0.5 0.5 0.7
+translatef 50 width 4
+scalef 1 1 8
+volume box
+popmatrix
+pushmatrix
+color3f 0.5 0.5 0.7
+translatef 60 width 4
+scalef 1 1 8
+volume box
+popmatrix
+pushmatrix
+color3f 0.5 0.5 0.7
+translatef 70 width 4
+scalef 1 1 8
+volume box
+popmatrix
+pushmatrix
+color3f 0.5 0.5 0.7
+translatef 80 width 4
+scalef 1 1 8
+volume box
+popmatrix
+
+#front
+begin quads
+color3f 1 0 0
+vertex3f 0 0 0
+vertex3f 0 0 height
+vertex3f 0 width height
+vertex3f 0 width 0
+end quads
+
+pushmatrix
+color3f 0.5 0.5 0.7
+translatef 0 widthdiv2 3
+scalef 1 width 1
+volume box
+popmatrix
+
+pushmatrix
+color3f 0.5 0.5 0.7
+translatef 0 widthdiv2 6
+scalef 1 width 1
+volume box
+popmatrix
+
+pushmatrix
+color3f 0.5 0.5 0.7
+translatef 0 10 4
+scalef 1 1 8
+volume box
+popmatrix
+
+pushmatrix
+color3f 0.5 0.5 0.7
+translatef 0 20 4
+scalef 1 1 8
+volume box
+popmatrix
+pushmatrix
+color3f 0.5 0.5 0.7
+translatef 0 30 4
+scalef 1 1 8
+volume box
+popmatrix
+endlist
+
+newlist trebuchet
+color3f 1 0 0
+pushmatrix
+translatef 0 0 0
+scalef 8 4 .5
+volume box
+popmatrix
+endlist
+
+newlist target
+color3f 0.7 0.5 0.3
+pushmatrix
+translatef targetPosLength targetPosWidth targetHeightDiv2
+scalef 0.5 0.5 targetHeight
+volume box
+popmatrix
+pushmatrix
+translatef targetPosLength targetPosWidth 0.5
+scalef 4 4 1
+volume box
+popmatrix
+color3f 0.9 0.3 0.3
+pushmatrix
+translatef targetPosLength targetPosWidth targetHeight
+rotatef 90 0 1 0 
+scalef 7 7 1
+volume cylinder 20 true true
+popmatrix
+color3f 0.9 0.9 0.9
+pushmatrix
+translatef targetPosLength targetPosWidth targetHeight
+rotatef 90 0 1 0 
+scalef 5 5 1.1
+volume cylinder 20 true true
+popmatrix
+color3f 0.9 0.3 0.3
+pushmatrix
+translatef targetPosLength targetPosWidth targetHeight
+rotatef 90 0 1 0 
+scalef 3 3 1.2
+volume cylinder 20 true true
+popmatrix
+color3f 0.9 0.9 0.9
+pushmatrix
+translatef targetPosLength targetPosWidth targetHeight
+rotatef 90 0 1 0 
+scalef 1 1 1.3
+volume cylinder 20 true true
+popmatrix
+endlist
+
+end displaylist
+
+calllist trebuchet
+calllist target
+calllist grass
+
+pushmatrix
+begin script
+popmatrix
+
+end script
