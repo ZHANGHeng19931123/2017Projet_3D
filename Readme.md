@@ -6,7 +6,7 @@
 
 L’interface graphique de notre projet est présente au-dessous :
 
-![img](/home/heng/Documents/TSE/FISE2/Semestre 8/Projet 3D/ZHANG-YAN-TDB/rapport/img.png)
+![img](rapport/img.png)
 
 1. Pour commencer, vous devez remplir votre nom, le nombre de coup que vous voulez jouer, et le niveau de difficulté. Ensuite, vous cliquez sur le Button **<start>** pour lancer le jeu. 
 2. Si les informations que vous avez remplies sont tous valides, vous allez voir que la fenêtre en temps réel est activée et ça va détecter votre poing. Si le poing est détecté, il y aura un cercle bleu qui est superposé sur votre poing. Sinon, le cercle sera rouge pour vous indiquer que le poing n’est pas détecté.
